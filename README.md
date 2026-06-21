@@ -7,7 +7,7 @@ Grounding computer vision in real-time traffic intelligence via YOLOv8, OpenCV &
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-46E3B7?style=flat-square&logo=render&logoColor=white)](#) [![Backend API](https://img.shields.io/badge/Backend_API-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)](#) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE) 
 
-**[🔗 Open Live Web Application](https://visionguard-frontend.onrender.com)** | **[🔗 Read Live Backend API Health](https://visionguard-backend-pjsa.onrender.com/api/dashboard/stats)**
+**[🔗 Open Live Web Application](https://visionguard-frontend.onrender.com)**
 
 [Overview](#-project-overview) • [Key Features](#-key-features) • [Architecture](#-system-architecture--design-principles) • [Tech Stack](#-technology-stack) • [Setup Guide](#-installation--running-on-localhost) • [Render Deployment](#️-deployment-on-render)
 
