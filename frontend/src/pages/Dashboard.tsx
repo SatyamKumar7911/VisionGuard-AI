@@ -76,6 +76,18 @@ export default function Dashboard() {
 
   return (
     <Layout isConnected={isConnected}>
+      <div className="mb-8 space-y-2 p-6 bg-slate-900/40 rounded-xl border border-slate-800/80 backdrop-blur-sm shadow-[0_4px_20px_-2px_rgba(0,0,0,0.3)]">
+        <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-2">
+          📹 VisionGuard <span className="text-primary neon-text">AI</span>
+        </h2>
+        <p className="text-lg font-semibold text-slate-200">
+          Autonomous, AI-Powered Traffic Violation Detection Platform
+        </p>
+        <p className="text-sm text-slate-400">
+          Grounding computer vision in real-time traffic intelligence via YOLO, OpenCV & EasyOCR.
+        </p>
+      </div>
+
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <AnimatedCard 
           title="Total Violations" 

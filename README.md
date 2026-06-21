@@ -1,8 +1,7 @@
 <div align="center">
-  # VisionGuard AI
-  ### Smart Enforcement Suite for Automated Traffic Violation Detection Using Computer Vision
-
-  **"Seeing Violations. Enforcing Safety. Transforming Traffic Management."**
+  <h1>📹 VisionGuard AI</h1>
+  <h3>Autonomous, AI-Powered Traffic Violation Detection Platform</h3>
+  <p>Grounding computer vision in real-time traffic intelligence via YOLOv8, OpenCV & EasyOCR.</p>
 
   <p align="center">
     <img src="https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21" />
