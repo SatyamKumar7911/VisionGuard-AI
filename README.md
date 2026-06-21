@@ -229,7 +229,7 @@ FRONTEND_URL=http://localhost:5173
 ### Frontend (`.env`)
 ```env
 VITE_API_URL=http://localhost:8080/api
-VITE_WS_URL=ws://localhost:8080/ws
+VITE_WS_URL=https://visionguard-backend.onrender.com/ws
 ```
 
 ---
