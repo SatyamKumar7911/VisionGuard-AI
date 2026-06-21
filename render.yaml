@@ -25,7 +25,7 @@ services:
       - key: VITE_API_URL
         value: https://visionguard-backend.onrender.com/api
       - key: VITE_WS_URL
-        value: wss://visionguard-backend.onrender.com/ws
+        value: https://visionguard-backend.onrender.com/ws
     routes:
       - type: rewrite
         source: /*
