@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="https://via.placeholder.com/150x150.png?text=VG+Logo" alt="VisionGuard AI Logo" width="150"/>
-  
   # VisionGuard AI
   ### Smart Enforcement Suite for Automated Traffic Violation Detection Using Computer Vision
 
@@ -19,8 +17,6 @@
     <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
     <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render" />
   </p>
-  
-  <img src="https://via.placeholder.com/1000x400.png?text=VisionGuard+AI+Dashboard+Banner" alt="Project Banner" width="100%"/>
 </div>
 
 ---
