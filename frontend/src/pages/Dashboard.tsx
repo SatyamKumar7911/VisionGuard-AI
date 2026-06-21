@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Activity, Camera, Car, ShieldAlert } from "lucide-react";
 import { Client } from "@stomp/stompjs";
-import SockJS from "sockjs-client";
 import { toast } from "sonner";
 
 import Layout from "../components/Layout";
@@ -28,10 +27,11 @@ export default function Dashboard() {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    const wsUrl = import.meta.env.VITE_WS_URL || "http://localhost:8080/ws";
+    // We use the native WebSocket endpoint for reliable connection on cloud providers
+    const wsUrl = import.meta.env.VITE_WS_URL || "ws://localhost:8080/ws-native";
     
     const client = new Client({
-      webSocketFactory: () => new SockJS(wsUrl),
+      brokerURL: wsUrl,
       reconnectDelay: 5000,
       heartbeatIncoming: 10000,
       heartbeatOutgoing: 10000,
