@@ -1,34 +1,25 @@
 <div align="center">
-  <h1>📹 VisionGuard AI</h1>
-  <h3>Autonomous, AI-Powered Traffic Violation Detection Platform</h3>
-  <p>Grounding computer vision in real-time traffic intelligence via YOLOv8, OpenCV & EasyOCR.</p>
 
-  <p align="center">
-    <img src="https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21" />
-    <img src="https://img.shields.io/badge/Spring_Boot-3-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot 3" />
-    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-    <br/>
-    <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" />
-    <img src="https://img.shields.io/badge/YOLO-00FFFF?style=for-the-badge&logo=yolo&logoColor=black" alt="YOLO" />
-    <img src="https://img.shields.io/badge/H2-Database-003545?style=for-the-badge&logo=sqlite&logoColor=white" alt="H2 Database" />
-    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-    <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render" />
-  </p>
+# 📹 VisionGuard AI
+**Autonomous, AI-Powered Traffic Violation Detection Platform**
 
-  <h3>
-    🔴 <a href="https://visionguard-frontend.onrender.com"><b>Live Demo Is Available Here!</b></a> 🔴
-  </h3>
+Grounding computer vision in real-time traffic intelligence via YOLOv8, OpenCV & EasyOCR.
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-46E3B7?style=flat-square&logo=render&logoColor=white)](#) [![Backend API](https://img.shields.io/badge/Backend_API-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)](#) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE) 
+
+**[🔗 Open Live Web Application](https://visionguard-frontend.onrender.com)** | **[🔗 Read Live Backend API Health](https://visionguard-backend-pjsa.onrender.com/api/dashboard/stats)**
+
+[Overview](#-project-overview) • [Key Features](#-key-features) • [Architecture](#-system-architecture--design-principles) • [Tech Stack](#-technology-stack) • [Setup Guide](#-installation--running-on-localhost) • [Render Deployment](#️-deployment-on-render)
+
 </div>
 
 ---
 
-## 📖 About the Project
+## 📈 Project Overview
 
 Traffic departments generate millions of surveillance images daily. Manual inspection of traffic violations is not only time-consuming but also highly error-prone. 
 
-**VisionGuard AI** is a state-of-the-art Computer Vision pipeline and comprehensive dashboard designed to automate traffic law enforcement. By processing real-time feeds and uploaded images, it instantly identifies infractions and extracts vehicle details to assist traffic authorities.
+**VisionGuard AI** is a state-of-the-art, autonomous Computer Vision pipeline and comprehensive dashboard designed to automate traffic law enforcement. By processing real-time feeds and uploaded images, it instantly identifies infractions and extracts vehicle details to assist traffic authorities before they claim their next victim.
 
 **VisionGuard AI automates:**
 - 🚘 Vehicle Detection & Classification
@@ -44,19 +35,19 @@ Traffic departments generate millions of surveillance images daily. Manual inspe
 
 ### AI Modules & Capabilities
 
-- [x] **Image Preprocessing:** Enhancement of low-light and blurry images.
-- [x] **Vehicle Detection:** Accurately bounds cars, trucks, motorcycles, and buses.
-- [x] **Helmet Detection:** Identifies two-wheeler riders without helmets.
-- [x] **Seatbelt Detection:** Detects four-wheeler occupants not wearing seatbelts.
-- [x] **Triple Riding Detection:** Flags motorcycles carrying more than two passengers.
-- [x] **Wrong-Side Driving Detection:** Tracks vehicle trajectories against lane flow.
-- [x] **Red-Light Violation Detection:** Syncs with traffic light states to catch runners.
-- [x] **Stop-Line Violation Detection:** Identifies vehicles crossing zebra crossings on red.
-- [x] **Illegal Parking Detection:** Monitors no-parking zones for stationary vehicles.
-- [x] **License Plate Recognition (OCR):** High-accuracy text extraction from plates.
-- [x] **Evidence Generation:** Crops and saves evidence frames with bounding boxes.
-- [x] **Real-Time Dashboard:** A WebSocket-powered UI for live metrics and alerts.
-- [x] **Analytics and Reporting:** Exportable statistics on violation hotspots and trends.
+- **Image Preprocessing:** Enhancement of low-light and blurry images.
+- **Vehicle Detection:** Accurately bounds cars, trucks, motorcycles, and buses.
+- **Helmet Detection:** Identifies two-wheeler riders without helmets.
+- **Seatbelt Detection:** Detects four-wheeler occupants not wearing seatbelts.
+- **Triple Riding Detection:** Flags motorcycles carrying more than two passengers.
+- **Wrong-Side Driving Detection:** Tracks vehicle trajectories against lane flow.
+- **Red-Light Violation Detection:** Syncs with traffic light states to catch runners.
+- **Stop-Line Violation Detection:** Identifies vehicles crossing zebra crossings on red.
+- **Illegal Parking Detection:** Monitors no-parking zones for stationary vehicles.
+- **License Plate Recognition (OCR):** High-accuracy text extraction from plates.
+- **Evidence Generation:** Crops and saves evidence frames with bounding boxes.
+- **Real-Time Dashboard:** A WebSocket-powered UI for live metrics and alerts.
+- **Analytics and Reporting:** Exportable statistics on violation hotspots and trends.
 
 ---
 
