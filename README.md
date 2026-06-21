@@ -5,8 +5,6 @@
 
 Grounding computer vision in real-time traffic intelligence via YOLOv8, OpenCV & EasyOCR.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-46E3B7?style=flat-square&logo=render&logoColor=white)](#) [![Backend API](https://img.shields.io/badge/Backend_API-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)](#) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE) 
-
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-46E3B7?style=flat-square&logo=render&logoColor=white)](#)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=flat-square&logo=springboot&logoColor=white)](#)
