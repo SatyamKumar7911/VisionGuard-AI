@@ -7,6 +7,21 @@ Grounding computer vision in real-time traffic intelligence via YOLOv8, OpenCV &
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-46E3B7?style=flat-square&logo=render&logoColor=white)](#) [![Backend API](https://img.shields.io/badge/Backend_API-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)](#) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE) 
 
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-46E3B7?style=flat-square&logo=render&logoColor=white)](#)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=flat-square&logo=springboot&logoColor=white)](#)
+[![Java](https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](#)
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](#)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](#)
+[![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)](#)
+[![YOLO](https://img.shields.io/badge/YOLO-FF007F?style=flat-square)](#)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](#)
+[![Contributors](https://img.shields.io/github/contributors/SatyamKumar7911/VisionGuard-AI?style=flat-square)](https://github.com/SatyamKumar7911/VisionGuard-AI/graphs/contributors)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+
+
+
 **[🔗 Open Live Web Application](https://visionguard-frontend.onrender.com)**
 
 [Overview](#-project-overview) • [Key Features](#-key-features) • [Architecture](#-system-architecture--design-principles) • [Tech Stack](#-technology-stack) • [Setup Guide](#-installation--running-on-localhost) • [Render Deployment](#️-deployment-on-render)
