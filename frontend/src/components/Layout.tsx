@@ -3,10 +3,22 @@ import ThemeToggle from "./ThemeToggle";
 
 interface LayoutProps {
   children: ReactNode;
-  isConnected: boolean;
+  connectionState: "OFFLINE" | "RECONNECTING" | "LIVE";
 }
 
-export default function Layout({ children, isConnected }: LayoutProps) {
+export default function Layout({ children, connectionState }: LayoutProps) {
+  const stateStyles = {
+    "LIVE": "bg-success/10 text-success border-success/30 shadow-[0_0_10px_rgba(34,197,94,0.3)]",
+    "RECONNECTING": "bg-warning/10 text-warning border-warning/30 shadow-[0_0_10px_rgba(234,179,8,0.3)]",
+    "OFFLINE": "bg-destructive/10 text-destructive border-destructive/30"
+  };
+
+  const dotStyles = {
+    "LIVE": "bg-success animate-pulse",
+    "RECONNECTING": "bg-warning animate-pulse",
+    "OFFLINE": "bg-destructive"
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="sticky top-0 z-50 w-full border-b border-slate-800 bg-background/80 backdrop-blur-md">
@@ -22,11 +34,10 @@ export default function Layout({ children, isConnected }: LayoutProps) {
 
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold ${isConnected ? 'bg-success/10 text-success border border-success/30 shadow-[0_0_10px_rgba(34,197,94,0.3)]' : 'bg-destructive/10 text-destructive border border-destructive/30'}`}>
-              <div className={`w-2 h-2 rounded-full ${isConnected ? 'bg-success animate-pulse' : 'bg-destructive'}`} />
-              {isConnected ? "LIVE" : "OFFLINE"}
+            <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border ${stateStyles[connectionState]}`}>
+              <div className={`w-2 h-2 rounded-full ${dotStyles[connectionState]}`} />
+              {connectionState}
             </div>
-            {!isConnected && <span className="text-xs text-muted-foreground animate-pulse">Reconnecting...</span>}
           </div>
         </div>
       </header>

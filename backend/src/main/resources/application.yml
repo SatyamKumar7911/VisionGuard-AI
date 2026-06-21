@@ -7,6 +7,13 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB
 
+logging:
+  level:
+    root: INFO
+    com.visionguard: INFO
+    org.springframework.web.socket: DEBUG
+    org.springframework.messaging: DEBUG
+
 server:
   port: ${PORT:8080}
   compression:

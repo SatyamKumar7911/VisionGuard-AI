@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Activity, Camera, Car, ShieldAlert } from "lucide-react";
 import { Client } from "@stomp/stompjs";
+import SockJS from "sockjs-client/dist/sockjs";
 import { toast } from "sonner";
 
 import Layout from "../components/Layout";
@@ -24,19 +25,33 @@ export default function Dashboard() {
   });
   
   const [feed, setFeed] = useState<FeedItem[]>([]);
-  const [isConnected, setIsConnected] = useState(false);
+  const [connectionState, setConnectionState] = useState<"OFFLINE" | "RECONNECTING" | "LIVE">("OFFLINE");
 
   useEffect(() => {
-    // We use the native WebSocket endpoint for reliable connection on cloud providers
-    const wsUrl = import.meta.env.VITE_WS_URL || "ws://localhost:8080/ws-native";
+    const WS_URL = import.meta.env.MODE === "production"
+      ? import.meta.env.VITE_WS_URL || "wss://visionguard-backend.onrender.com/ws"
+      : "ws://localhost:8080/ws";
+
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api";
+
+    console.log("Initializing WebSocket with URL:", WS_URL);
+    setConnectionState("RECONNECTING");
+
+    // SockJS strictly requires http/https scheme, even if the intent is a WebSocket
+    let sockJsUrl = WS_URL;
+    if (sockJsUrl.startsWith("ws://")) sockJsUrl = sockJsUrl.replace("ws://", "http://");
+    if (sockJsUrl.startsWith("wss://")) sockJsUrl = sockJsUrl.replace("wss://", "https://");
+
+    const socket = new SockJS(sockJsUrl);
     
     const client = new Client({
-      brokerURL: wsUrl,
+      webSocketFactory: () => socket,
       reconnectDelay: 5000,
-      heartbeatIncoming: 10000,
-      heartbeatOutgoing: 10000,
+      heartbeatIncoming: 4000,
+      heartbeatOutgoing: 4000,
       onConnect: () => {
-        setIsConnected(true);
+        console.log("WebSocket Connected");
+        setConnectionState("LIVE");
         toast.success("Connected to live data stream");
 
         client.subscribe("/topic/dashboard/stats", (message) => {
@@ -60,22 +75,41 @@ export default function Dashboard() {
         });
       },
       onDisconnect: () => {
-        setIsConnected(false);
+        console.log("WebSocket Disconnected");
+        setConnectionState("OFFLINE");
       },
-      onWebSocketError: () => {
-        setIsConnected(false);
+      onWebSocketClose: () => {
+        console.log("WebSocket Closed");
+        setConnectionState((prev) => prev === "LIVE" ? "OFFLINE" : "RECONNECTING");
+      },
+      onStompError: (frame) => {
+        console.error("Broker reported error: " + frame.headers['message']);
+        console.error("Additional details: " + frame.body);
       }
     });
 
     client.activate();
 
+    // Fallback HTTP polling if WebSocket fails to connect
+    const pollInterval = setInterval(() => {
+      // client.connected is true when stomp connection is fully established
+      if (!client.connected) {
+        setConnectionState("RECONNECTING");
+        fetch(`${API_URL}/dashboard/stats`)
+          .then(res => res.json())
+          .then(data => setStats(data))
+          .catch(err => console.error("HTTP Fallback failed:", err));
+      }
+    }, 5000);
+
     return () => {
       client.deactivate();
+      clearInterval(pollInterval);
     };
   }, []);
 
   return (
-    <Layout isConnected={isConnected}>
+    <Layout connectionState={connectionState}>
       <div className="mb-8 space-y-2 p-6 bg-slate-900/40 rounded-xl border border-slate-800/80 backdrop-blur-sm shadow-[0_4px_20px_-2px_rgba(0,0,0,0.3)]">
         <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-2">
           📹 VisionGuard <span className="text-primary neon-text">AI</span>

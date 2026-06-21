@@ -5,7 +5,7 @@ import { Toaster } from 'sonner';
 function App() {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-      <Toaster position="top-right" richColors />
+      <Toaster position="top-right" richColors closeButton offset="80px" />
       <Router>
         <Routes>
           <Route path="/" element={<Dashboard />} />

@@ -31,13 +31,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        // SockJS fallback (often problematic on cloud load balancers)
         registry.addEndpoint("/ws")
-                .setAllowedOriginPatterns("*")
+                .setAllowedOriginPatterns(
+                    "http://localhost:5173",
+                    "https://visionguard-frontend.onrender.com"
+                )
                 .withSockJS();
-                
-        // Native WebSocket endpoint (Recommended for Render)
-        registry.addEndpoint("/ws-native")
-                .setAllowedOriginPatterns("*");
     }
 }
